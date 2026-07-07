@@ -1,2 +1,2 @@
 # novaworks-corporate-site
-ポートフォリオ掲載用の架空IT企業コーポレートサイト
+Fictional corporate website built with HTML/CSS/JavaScript
