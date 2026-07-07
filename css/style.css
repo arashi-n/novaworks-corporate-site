@@ -1,0 +1,30 @@
+:root {
+	/* Color */
+	--color-primary: #0d2b52;
+	--color-secondary: #4b74b2;
+	--color-accent: #3a86ff;
+
+	--color-white: #ffffff;
+	--color-black: #222222;
+	--color-gray: #666666;
+	--color-border: #e5e7eb;
+	--color-bg: #f8fafc;
+
+	/* Width */
+	--container-width: 1200px;
+
+	/* Radius */
+	--radius: 12px;
+
+	/* Shadow */
+	--shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+	width: min(100% - 40px, 1200px);
+	margin-inline: auto;
+}
+
+section {
+	padding: 100px 0;
+}
