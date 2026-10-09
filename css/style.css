@@ -1,5 +1,5 @@
 /* ==========================
-   CSS Variables
+    CSS Variables
 ========================== */
 :root {
 	/* Color */
@@ -27,13 +27,15 @@
 }
 
 /* ==========================
-   Base
+    Base
 ========================== */
 html {
 	scroll-behavior: smooth;
 }
 
 body {
+	margin: 0;
+
 	font-family: "Noto Sans JP", sans-serif;
 
 	color: var(--color-black);
@@ -44,13 +46,13 @@ body {
 }
 
 .container {
-	width: min(100% - 40px, var(--container));
+	width: min(100% - 40px, var(--container-width));
 
 	margin-inline: auto;
 }
 
 section {
-	padding: 100px 0;
+	display: block;
 }
 
 img {
@@ -80,7 +82,7 @@ button {
 }
 
 /* ==========================
-   Header
+    Header
 ========================== */
 .header {
 	position: fixed;
@@ -133,4 +135,166 @@ button {
 
 .header__button {
 	color: var(--color-white);
+}
+
+/* ==========================
+    Hero
+========================== */
+/* キャッチコピー */
+
+.hero {
+	width: 100%;
+
+	padding: var(--header-height);
+	background: var(--color-white);
+}
+
+.hero .container {
+	display: flex;
+	align-items: flex-start;
+
+	width: calc(100% - 64px);
+	aspect-ratio: 1312 / 700;
+
+	padding: 0 20px;
+
+	background-image: url("../images/Hero.png");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	border-radius: 20px;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.hero .container::before,
+.hero .container::after {
+	content: "";
+	position: absolute;
+
+	top: 0;
+
+	width: 200px;
+	height: 100%;
+
+	pointer-events: none;
+
+	z-index: 1;
+}
+
+.hero .container::before {
+	left: 0;
+
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+.hero .container::after {
+	right: 0;
+
+	background: linear-gradient(
+		to left,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+.hero__content {
+	display: inline-block;
+	margin-left: 0;
+	margin-top: auto;
+
+	position: relative;
+	z-index: 2;
+}
+
+.hero__title {
+	font-size: 56px;
+	line-height: 1.4;
+
+	margin-bottom: 16px;
+}
+
+.hero__title-box {
+	position: relative;
+	display: inline-block;
+}
+
+.hero__title-blur {
+	position: absolute;
+	inset: -6px;
+
+	background: rgba(255, 255, 255, 0.8);
+	filter: blur(8px);
+
+	z-index: 0;
+}
+
+.hero__title-blur::after {
+	content: "";
+
+	position: absolute;
+
+	top: 0;
+	right: -80px;
+
+	width: 80px;
+	height: 100%;
+
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0)
+	);
+}
+
+.hero__title-text {
+	position: relative;
+	z-index: 1;
+}
+
+.hero__title br {
+	display: block;
+	margin-bottom: 8px;
+}
+
+/* サブキャッチ */
+
+.hero__text-box {
+	position: relative;
+	display: inline-block;
+}
+
+.hero__text-blur {
+	position: absolute;
+	inset: 0;
+
+	background: rgba(255, 255, 255, 0.8);
+	filter: blur(8px);
+
+	z-index: 0;
+}
+
+.hero__text {
+	position: relative;
+	z-index: 1;
+}
+
+.hero__button {
+	display: block;
+
+	width: fit-content;
+
+	padding: 18px 62px;
+	margin-bottom: 60px;
+
+	border-radius: 12px;
+	color: var(--color-white);
+	background-color: var(--color-accent);
+	box-shadow: var(--shadow);
 }
